@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <errno.h>
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	unsigned char *temp_s1;
 	int len;
