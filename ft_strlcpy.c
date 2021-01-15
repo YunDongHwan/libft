@@ -10,24 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-    size_t idx;        
-    
-    idx = 0;
-    if (src[idx] != NULL && dstsize > 0)
-    {
-        while (idx < dstsize - 1 && src[idx] != NULL)
-        {
-            dst[idx] = src[idx];
-            idx++;      
-        }
-    }
-    dst[idx] = NULL;
-    while (src[idx])
-        idx++;
-    return (idx);
-    
-}       
+	size_t idx;
+
+	idx = 0;
+	if (src[idx] != '\0' && dstsize > 0)
+	{
+		while (idx < dstsize - 1 && src[idx] != '\0')
+		{
+			dst[idx] = src[idx];
+			idx++;
+		}
+	}
+	dst[idx] = '\0';
+	while (src[idx])
+		idx++;
+	return (idx);
+
+}

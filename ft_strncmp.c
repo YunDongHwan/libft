@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int     ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    size_t idx;
+	size_t idx;
 
-    idx = 0;
-    while (n)
-    {
-        if (s1[idx] == s2[idx])
-        {
-            idx++;
-        }
-        else
-            return (s1[idx] > s2[idx] ? 1 : -1);
-        n--;
-    }
-    return (0);
+	idx = 0;
+	while (n)
+	{
+		if (s1[idx] == s2[idx])
+		{
+			idx++;
+		}
+		else
+			return (s1[idx] > s2[idx] ? 1 : -1);
+		n--;
+	}
+	return (0);
 }

@@ -10,20 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void    bzero(void *s, size_t n)
+void	bzero(void *s, size_t n)
 {
-    unsigned char temp;
+	unsigned char *temp;
+	unsigned char temp_n;
 
-    temp = s;
-    if (n < 1)
-        return (0);
-    while(n)
-    {
-        temp = 0;
-        temp++;
-        n--;
-    }
-    return (s);    
+	temp_n = n;
+	temp = (unsigned char*)s;
+	if (n < 1)
+		return ((void)0);
+	while(temp_n)
+	{
+		*temp = 0;
+		temp++;
+		temp_n--;
+	}
+	return ((void)temp);
 }

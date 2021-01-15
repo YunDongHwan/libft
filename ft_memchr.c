@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/27 23:30:52 by doyun             #+#    #+#             */
-/*   Updated: 2020/12/27 23:30:52 by doyun            ###   ########.fr       */
+/*   Created: 2020/12/28 21:53:56 by doyun             #+#    #+#             */
+/*   Updated: 2020/12/28 21:53:56 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *temp_d;
-	const char *temp_s;
+	const unsigned char *temp_s;
 
-	temp_d = (unsigned char*)dst;
-	temp_s = src;
-
-	while(n)
+	temp_s = (const unsigned char*)s;
+	while (n)
 	{
-		*temp_d = *temp_s;
-		temp_d++;
+		if (*temp_s == c)
+			return ((void*)temp_s);
 		temp_s++;
 		n--;
 	}
-	return (dst);
+	return (0);
 }

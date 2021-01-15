@@ -10,19 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void    *ft_memccpy(void *dst, const void *src, int c, size_t n)
  {
     char *temp_d;
     const char *temp_s;
-    unsigned char temp_c;
 
     temp_d = dst;
     temp_s = src;
     while (n)
     {
-        if (temp_s == c)
+        if (*temp_s == c)
             return (temp_d++);
         *temp_d = *temp_s;
         temp_d++;

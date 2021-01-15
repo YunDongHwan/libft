@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int		ft_atoi(const char *str)
 {
@@ -18,7 +18,7 @@ int		ft_atoi(const char *str)
 	int miner;
 	int num;
 
-	idx = 0;   
+	idx = 0;
 	miner = 1;
 	num = 0;
 	while (str[idx] != '\0' && ((str[idx] >= 9 && str[idx] <= 13) || str[idx] == 32))
@@ -27,7 +27,7 @@ int		ft_atoi(const char *str)
 	}
 	if (str[idx] == 43 || str[idx] == 45)
 	{
-		if (str[idx] == 45)  
+		if (str[idx] == 45)
 			miner *= -1;
 		idx++;
 	}

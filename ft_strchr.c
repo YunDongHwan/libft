@@ -10,18 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
-{  
-    unsigned char temp_c;
-      
-    temp_c = c;
-    while (*s)
-    {
-        if (*s == temp_c)
-            return (s);
-        s++;
-    }    
-    return (0);
+char	*ft_strchr(const char *s, int c)
+{
+	const char *temp_s;
+	unsigned char temp_c;
+
+	temp_s = s;
+	temp_c = c;
+	while (*temp_s)
+	{
+		if (*temp_s == temp_c)
+			return (char*)(temp_s);
+		temp_s++;
+	}
+	return (0);
 }

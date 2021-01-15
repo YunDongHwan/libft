@@ -10,27 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 #include <errno.h>
 
 char	*strdup(const char *s1)
 {
-	char *temp_s1;
-	char *cp_s1;
+	unsigned char *temp_s1;
 	int len;
 
-	len = 0;
-	while (s1[len])
-		len++;
-	temp_s1 = (char*)malloc(sizeof(char)*len + 1);
-	if (temp_s1 == NULL)
-	{
-		errno = ENOMEM;
+	len = strlen(s1) + 1;
+	temp_s1 = (unsigned char*)malloc(sizeof(char)*len);
+	if (*temp_s1 == '\0')
 		return (0);
-	}
-	cp_s1 = temp_s1;
-	while (*s1)
-		*temp_s1++ = *s1++;
-	*temp_s1 = '\0';
-	return (cp_s1);
+	//strcpy(temp_s1, s1);
+	return ((char*)temp_s1);
 }
