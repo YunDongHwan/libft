@@ -11,17 +11,23 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <errno.h>
 
 char	*ft_strdup(const char *s1)
 {
 	unsigned char *temp_s1;
 	int len;
+	int idx;
 
 	len = strlen(s1) + 1;
 	temp_s1 = (unsigned char*)malloc(sizeof(char)*len);
-	if (*temp_s1 == '\0')
+	if (temp_s1 == 0)
 		return (0);
-	//strcpy(temp_s1, s1);
+	idx = 0;
+	while (s1[idx])
+	{
+		temp_s1[idx] = s1[idx];
+		idx++;
+	}
+	temp_s1[idx] = '\0';
 	return ((char*)temp_s1);
 }
