@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:30:52 by doyun             #+#    #+#             */
-/*   Updated: 2020/12/27 23:30:52 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/18 01:32:21 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char *temp_d;
-	const char *temp_s;
+	unsigned char *temp_s;
 
-	temp_d = (unsigned char*)dst;
-	temp_s = src;
-
+	temp_d = (unsigned char *)dst;
+	temp_s = (unsigned char *)src;
+	if (temp_d == NULL && temp_s == NULL)
+		return (0);
 	while(n)
 	{
 		*temp_d = *temp_s;
@@ -27,5 +28,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		temp_s++;
 		n--;
 	}
-	return (dst);
+	return ((void *)dst);
 }

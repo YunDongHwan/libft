@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 23:40:45 by doyun             #+#    #+#             */
-/*   Updated: 2020/12/27 23:40:45 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/18 03:30:27 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 void    *ft_memccpy(void *dst, const void *src, int c, size_t n)
  {
-    char *temp_d;
-    const char *temp_s;
+    unsigned char *temp_d;
+    unsigned char *temp_s;
+	unsigned char temp_c;
 
-    temp_d = dst;
-    temp_s = src;
+    temp_d = (unsigned char *)dst;
+    temp_s = (unsigned char *)src;
+	temp_c = (unsigned char)c;
+	if (dst == NULL && src == NULL)
+		return (0);
     while (n)
     {
-        if (*temp_s == c)
-            return (temp_d++);
-        *temp_d = *temp_s;
+		*temp_d = *temp_s;
+        if (*temp_s == temp_c)				
+            return (temp_d++);		
         temp_d++;
         temp_s++;
         n--;
