@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 22:31:16 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/05 22:31:16 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/19 04:09:19 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const unsigned char *pnt_s;
+	unsigned char *temp_s;
+	int len;
 
-	pnt_s = (const unsigned char*)s;
-	while (s)
+	temp_s = (unsigned char *)s;
+	len = ft_strlen(s) + 1;
+	while (len--)
 	{
-		if (*s == c)
-			pnt_s = (const unsigned char*)s;
-		s++;
+		if (temp_s[len] == (unsigned char)c)
+			return ((char *)&temp_s[len]);		
 	}
-	if (pnt_s != (const unsigned char*)s)
-		return (0);
-	return ((char*)pnt_s);
+	return (0);
 }
