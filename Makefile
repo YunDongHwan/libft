@@ -22,6 +22,9 @@ ft_strnstr.c\
 ft_strncmp.c\
 ft_calloc.c\
 ft_strdup.c\
+ft_substr.c\
+ft_strjoin.c\
+ft_strtrim.c\
 
 CC = gcc
 CFLAGES = -Wall -Wextra -Werror
