@@ -6,7 +6,7 @@
 /*   By: doyun </var/mail/doyun>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 22:36:24 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/20 01:59:49 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/21 02:25:42 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char *dest;
-	unsigned char *src;
-	unsigned int count;
+	unsigned char	*dest;
+	unsigned char	*src;
+	unsigned int	idx;
 
 	src = (unsigned char *)s;
-	count = len - start;
-	dest = (unsigned char *)malloc(sizeof(char) * (count + 1));
+	dest = (unsigned char *)malloc(sizeof(char) * (len + 1));
 	if (!dest || !s )
 		return (0);
-	while (start < len && src[start])
+	idx = 0;
+	while (idx < len && src[start] && !(start > ft_strlen((char *)src)))
 	{
-		*dest++ = src[start++];
+		dest[idx++] = src[start++];
 	}
-	*dest = '\0';
-	return ((char *)(dest - count));
+	dest[idx] = '\0';
+	return ((char *)dest);
 }
