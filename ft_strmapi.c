@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/19 22:36:24 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/27 00:40:38 by doyun            ###   ########.fr       */
+/*   Created: 2021/01/26 23:09:32 by doyun             #+#    #+#             */
+/*   Updated: 2021/01/27 03:16:47 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static int	f(unsigned int i, char c)
 {
-	unsigned char	*dest;
-	unsigned char	*src;
-	unsigned int	idx;
+	if (i % 2)
+		c = 'j';
+	return (c);
+}
 
-	src = (unsigned char *)s;
-	if(!(dest = (unsigned char *)malloc(sizeof(char) * (len + 1))))
-		return (0);
-	if (!dest || !s )
-		return (0);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	unsigned char temp_s;
+	int len;
+	int idx;
+
+	len = ft_strlen(s);
+	if(!s && !f)
+		return NULL;
+	if (!(temp_s = (unsigned char)malloc(sizeof(char) * len + 1)))
+		return (NULL);
 	idx = 0;
-	while (idx < len && src[start] && !(start > ft_strlen((char *)src)))
+	while (idx < len)
 	{
-		dest[idx] = src[start];
+		temp_s[idx] = f(idx, s[idx]);
 		idx++;
-		start++;
 	}
-	dest[idx] = '\0';
-	return ((char *)dest);
+	temp_s[idx] = '\0';
+	return (temp_s);	
 }

@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 00:58:00 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/25 04:37:38 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/26 23:09:09 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ static int		intlen(long long int n)
 	{  
 		n /= 10;
 		len++;
-	}
-	// printf("len : %lld \n", len);
+	}	
 	return (len);
 }
 
-char	*ft_itoa(int n)				//-1234
+char	*ft_itoa(int n)
 {
 	char	*num;
 	int		len;
@@ -57,7 +56,7 @@ char	*ft_itoa(int n)				//-1234
 	{
 		num[len - 1] = ((n % 10) + '0');
 		n /= 10;
-		len--;		
+		len--;
 	}	
 	return (num);
 }

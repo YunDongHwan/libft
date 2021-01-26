@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 19:51:47 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/24 14:21:39 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/26 23:08:38 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int		checkStart(char *s, char c, int start)
 		idx++;
 	if (s[idx] && s[idx] != c)
 		return (idx);
-	return (0);
+	return (-1);
 }
 
 static int		checkEnd(char *s, char c)
@@ -62,18 +62,22 @@ static void		allocate(char **split_s, char *s, char c)
 	int	end;	
 
 	idx = 0;
-	start = 0;
-	if (!(start = checkStart(s, c, start)))
+	start = 0;	
+ 	while (0 <= (start = checkStart(s, c, start)))
 	{
 		end = checkEnd(&s[start], c);
-		split_s[idx] = ft_substr(s, start, end);
-		idx++;
-		start = start + end;
-	}
- 	while ((start = checkStart(s, c, start)))
-	{
-		end = checkEnd(&s[start], c);
-		split_s[idx] = ft_substr(s, start, end);
+		if (!(split_s[idx] = ft_substr(s, start, end)))
+		{			
+			while (idx > 0)
+			{		
+				idx--;
+				free(split_s[idx]);
+				split_s[idx] = 0;			
+			}
+			free(split_s);
+			split_s = 0;
+			return ;
+		}
 		idx++;
 		start = start + end;
 	}
@@ -89,7 +93,7 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	low = countChar((char *)s, c);
 	if (!(split_s = (char**)malloc(sizeof(char *) * (low + 1))))
-		return (0);		
+		return (0);	
 	allocate(split_s, (char *)s, c);
 	return (split_s); 
 }
