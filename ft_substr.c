@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doyun </var/mail/doyun>                    +#+  +:+       +#+        */
+/*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 22:36:24 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/21 02:25:42 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/23 22:23:07 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	idx = 0;
 	while (idx < len && src[start] && !(start > ft_strlen((char *)src)))
 	{
-		dest[idx++] = src[start++];
+		dest[idx] = src[start];
+		idx++;
+		start++;
 	}
 	dest[idx] = '\0';
 	return ((char *)dest);

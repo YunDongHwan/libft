@@ -6,7 +6,7 @@
 /*   By: doyun </var/mail/doyun>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:12:26 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/21 06:35:56 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/21 07:14:28 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	check_l = ft_strlen(s1) - 1;
 	while (check((char)s1[check_l], (char *)set))
 	{
-		check_l--;
+		check_l--;	
+		if (check_f >= check_l)
+			return (ft_strdup(""));
 	}
-	if (check_f >= check_l)
-		return (ft_strdup(""));
 	len = check_l - check_f + 1;
 	if (!(temp_s1 = (char *)ft_substr((char *)s1 , (int)check_f, len)))
 			return (0);	
