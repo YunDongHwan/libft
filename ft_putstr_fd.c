@@ -1,41 +1,25 @@
 /****************************************************************************/
 /*                                                                          */
 /*                                                       :::      ::::::::  */
-/*  ft_strmapi.c                                       :+:      :+:    :+:  */
+/*  ft_putstr_fd.c                                     :+:      :+:    :+:  */
 /*                                                   +:+ +:+         +:+    */
 /*  By: doyun <doyun@student.42.fr>                +#+  +:+       +#+       */
 /*                                               +#+#+#+#+#+   +#+          */
-/*  Created: 2021/01/26 23:09:32 by doyun             #+#    #+#            */
-/*  Updated: 2021/01/27 18:50:44 by doyun            ###   ########.fr      */
+/*  Created: 2021/01/28 16:38:34 by doyun             #+#    #+#            */
+/*  Updated: 2021/01/28 22:12:28 by doyun            ###   ########.fr      */
 /*                                                                          */
 /****************************************************************************/
 
 #include "libft.h"
 
-char	f(unsigned int i, char c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (i % 2)
-		c = 'j';
-	return (c);
-}
+	int idx;
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	unsigned char *temp_s;
-	unsigned int len;
-	unsigned int idx;
-
-	len = ft_strlen(s);
-	if(!s && !f)
-		return NULL;
-	if (!(temp_s = (unsigned char *)malloc(sizeof(char) * len + 1)))
-		return (NULL);
 	idx = 0;
-	while (idx < len)
+	while (s[idx])
 	{
-		temp_s[idx] = f(idx, s[idx]);
+		write(fd, &s[idx], 1);
 		idx++;
 	}
-	temp_s[idx] = '\0';
-	return ((char *)temp_s);	
 }
