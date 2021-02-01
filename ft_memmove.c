@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/28 18:54:46 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/18 03:24:07 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:37:44 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/02 01:23:11 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void				*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *temp_d;
-	unsigned char *temp_s;
-	unsigned int idx;
-		
+	unsigned char	*temp_d;
+	unsigned char	*temp_s;
+	unsigned int	idx;
+
 	temp_d = (unsigned char *)dst;
-	temp_s = (unsigned char *)src;	
+	temp_s = (unsigned char *)src;
 	idx = 0;
 	if (!dst && !src)
 		return (NULL);
@@ -29,15 +29,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		{
 			temp_d[idx] = temp_s[idx];
 			idx++;
-		}		
+		}
 	}
 	else if (temp_d > temp_s)
 	{
 		while (len)
 		{
-			temp_d[len - 1] = temp_s[len -1];
+			temp_d[len - 1] = temp_s[len - 1];
 			len--;
-		}
+		}		
 	}
 	return (dst);
 }

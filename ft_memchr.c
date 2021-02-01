@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchar.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/28 21:53:56 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/18 03:53:29 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:49:24 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 22:49:42 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void				*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *temp_s;
+	unsigned char	*temp_s;
 
 	temp_s = (unsigned char*)s;
 	while (n)

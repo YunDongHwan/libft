@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 02:10:42 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/30 02:10:42 by doyun            ###   ########.fr       */
+/*   Updated: 2021/01/31 17:45:28 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (lst);
 	while (lst->next)
 	{
-		lst->next = lst->next->content;
+		lst = lst->next;
 	}
-	return (lst->content);
+	return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 22:36:24 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/27 00:40:38 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/01 21:32:54 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	idx;
 
 	src = (unsigned char *)s;
-	if(!(dest = (unsigned char *)malloc(sizeof(char) * (len + 1))))
+	if (!(dest = (unsigned char *)malloc(sizeof(char) * (len + 1))))
 		return (0);
-	if (!dest || !s )
+	if (!dest || !s)
 		return (0);
 	idx = 0;
 	while (idx < len && src[start] && !(start > ft_strlen((char *)src)))

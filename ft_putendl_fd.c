@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/29 01:06:57 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/29 01:06:59 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:45:18 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 22:45:23 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 02:12:37 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/30 02:12:37 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/02 02:55:39 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,16 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while ((*lst)->next)
+	t_list *temp_lst;
+	if (!*lst)
 	{
-		(*lst)->next = (*lst)->next->content;
+		*lst = new;
+		return ;
 	}
-	(*lst)->next = new;
-	new->next = NULL;
+	temp_lst = *lst;
+	while (temp_lst->next)
+	{
+		temp_lst = temp_lst->next;
+	}
+	temp_lst->next = new;
 }

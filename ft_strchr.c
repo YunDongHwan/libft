@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/05 02:32:10 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/19 04:15:22 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:35:46 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 22:36:58 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char		*ft_strchr(const char *s, int c)
 {
-	char *temp_s;
+	char	*temp_s;
 
 	temp_s = (char *)s;
 	while (*temp_s)

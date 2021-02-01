@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 03:28:16 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/30 03:28:16 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/01 16:16:08 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst)
+	if (!lst || !f)
 		return ;
 	while (lst)
 	{

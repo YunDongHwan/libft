@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/27 23:30:52 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/18 01:32:21 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:43:10 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 22:43:26 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	temp_s = (unsigned char *)src;
 	if (temp_d == NULL && temp_s == NULL)
 		return (0);
-	while(n)
+	while (n)
 	{
 		*temp_d = *temp_s;
 		temp_d++;

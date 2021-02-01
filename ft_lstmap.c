@@ -5,29 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 03:33:20 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/30 03:33:20 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:45:53 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/02 02:32:31 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_free(t_list *f_lst, void (*del)(void *))
 {
-	t_list *f_lst;
-
-	if (!(f_lst = mallic(sizeof(t_list) * ft_lstsize(lst) + 1)))
-		return (NULL);
-	if (!lst)
-		return (NULL);
-	while (lst)
+	if (!f_lst)
 	{
-		f_lst->content = lst->content;
-		f_lst->next = lst->next;
-		ft_lstiter(f_lst, f);
-		lst = lst->next;
-		f_lst = f_lst->next;
+		del(f_lst->content);
+		free(f_lst);
 	}
-	f_lst = NULL;
+	return (f_lst);
+}
+
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*f_lst;
+	t_list	*new_lst;
+	t_list  *temp_lst;
+
+	if (!lst || !f)
+		return (NULL);
+	temp_lst = lst;
+	if (!(f_lst = ft_lstnew(f(temp_lst->content))))
+		return (NULL);
+	temp_lst = temp_lst->next;
+	while (temp_lst)
+	{
+		if(!(new_lst = ft_lstnew(f(temp_lst->content))))
+		{
+			ft_lstclear(&f_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&f_lst, new_lst);
+		temp_lst = temp_lst->next;
+	}
 	return (f_lst);
 }

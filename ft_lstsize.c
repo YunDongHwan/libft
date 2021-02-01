@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
+/*   By: doyun </var/mail/doyun>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 02:06:38 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/30 02:06:38 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/02 00:45:40 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/02 00:46:00 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int		ft_lstsize(t_list *lst)
 	int len;
 
 	len = 0;
-	while (lst->next)
+	while (lst)
 	{
-		lst->next = lst->next->content;
+		lst = lst->next;
 		len++;
 	}
 	return (len);

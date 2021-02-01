@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/30 02:12:10 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/20 16:34:41 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:30:46 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 22:31:04 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	while (src[idx])
 		idx++;
 	return (idx);
-
 }

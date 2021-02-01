@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/30 01:48:54 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/18 03:51:45 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:41:18 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 22:42:38 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void * str1, const void * str2, size_t n)
+int					ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	const unsigned char *temp_s1;
-	const unsigned char *temp_s2;
+	unsigned char	*temp_s1;
+	unsigned char	*temp_s2;
 
 	temp_s1 = (unsigned char *)str1;
 	temp_s2 = (unsigned char *)str2;

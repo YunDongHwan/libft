@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/27 20:07:03 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/16 04:06:33 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 21:19:33 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 21:20:33 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *temp;
+	unsigned char	*temp;
 
 	temp = (unsigned char*)s;
-	while(n)
+	while (n)
 	{
 		*temp = '\0';
 		temp++;
 		n--;
-	}	
+	}
 }

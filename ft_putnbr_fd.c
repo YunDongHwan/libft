@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/29 01:07:04 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/29 01:57:45 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:34:09 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 22:35:10 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n >= 10)
 	{
-		ft_putnbr_fd(n/10, fd);
-		ft_putchar_fd(n%10 + '0', fd);
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
 	}
 	if (n >= 0 && n <= 9)
 	{
 		ft_putchar_fd(n + '0', fd);
 	}
-
 }

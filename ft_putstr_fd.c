@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/29 01:07:10 by doyun             #+#    #+#             */
-/*   Updated: 2021/01/29 01:07:11 by doyun            ###   ########.fr       */
+/*   Created: 2021/02/01 22:40:37 by doyun             #+#    #+#             */
+/*   Updated: 2021/02/01 22:40:47 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int idx;
 
 	idx = 0;
+	if (!s)
+		return ;
 	while (s[idx])
 	{
 		write(fd, &s[idx], 1);
