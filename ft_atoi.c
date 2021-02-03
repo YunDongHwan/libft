@@ -6,13 +6,13 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 20:59:08 by doyun             #+#    #+#             */
-/*   Updated: 2021/02/01 21:17:13 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/02 22:55:33 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
 	int				idx;
 	int				miner;

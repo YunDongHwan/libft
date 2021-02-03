@@ -6,15 +6,15 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 22:30:46 by doyun             #+#    #+#             */
-/*   Updated: 2021/02/01 22:31:04 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/02 22:58:44 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t idx;
+	size_t	idx;
 
 	idx = 0;
 	if (!dst && !src)

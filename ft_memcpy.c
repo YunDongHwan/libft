@@ -6,16 +6,16 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 22:43:10 by doyun             #+#    #+#             */
-/*   Updated: 2021/02/01 22:43:26 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/03 02:48:15 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void				*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char *temp_d;
-	unsigned char *temp_s;
+	unsigned char	*temp_d;
+	unsigned char	*temp_s;
 
 	temp_d = (unsigned char *)dst;
 	temp_s = (unsigned char *)src;
@@ -28,5 +28,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		temp_s++;
 		n--;
 	}
-	return ((void *)dst);
+	return (dst);
 }

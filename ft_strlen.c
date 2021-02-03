@@ -6,15 +6,15 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 22:15:38 by doyun             #+#    #+#             */
-/*   Updated: 2021/02/01 22:15:42 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/02 22:59:04 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t		ft_strlen(const char *s)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	while (s[len])

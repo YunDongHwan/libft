@@ -6,13 +6,13 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 22:36:24 by doyun             #+#    #+#             */
-/*   Updated: 2021/02/01 21:32:54 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/02 23:00:24 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char				*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned char	*dest;
 	unsigned char	*src;
