@@ -6,7 +6,7 @@
 /*   By: doyun <doyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:12:26 by doyun             #+#    #+#             */
-/*   Updated: 2021/02/01 22:21:01 by doyun            ###   ########.fr       */
+/*   Updated: 2021/02/03 19:56:35 by doyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	size_t		len;
 
 	if (!s1 || !set)
-		return (ft_strdup(""));
+		return (NULL);
 	check_f = 0;
 	while (check((char)s1[check_f], (char *)set))
 	{

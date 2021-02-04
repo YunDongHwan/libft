@@ -28,8 +28,8 @@ all : 					$(NAME)
 $(NAME) : 				$(OBJS)
 						$(AR) $(NAME) $(OBJS)
 
-bonus : 				$(OBJS_BONUS)
-						$(AR) $(NAME) $(OBJS_BONUS)
+bonus : 				$(OBJS) $(OBJS_BONUS)
+						$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
 
 %.o:%.c
 	$(CC) $(CFLAGES) -c $< -o $@
